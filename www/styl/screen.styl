@@ -5,4 +5,17 @@
 .ig
   @import basics
 .ig
-  background yellow
+  .slope1
+  .slope2
+    position absolute
+    top 0px
+    left 0px
+    width 300px
+    height 400px
+    g.line
+      opacity 0.1
+      &.active
+        opacity 1
+  .slope2
+    left 300px
+  @import Slope

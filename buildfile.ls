@@ -10,11 +10,11 @@ externalStyles =
   # \https://samizdat.cz/tools/tooltip/v1.1.4.css
   ...
 
-externalData = {}
-  # "leky": "#__dirname/data/leky.tsv"
+externalData =
+  "obory": "#__dirname/data/obory.csv"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
-deferScripts = <[ geoUtils.js base.js ]>
+deferScripts = <[ obory.js geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>
 safe-deployable =
