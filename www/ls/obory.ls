@@ -14,14 +14,14 @@ slope2Container = container.append \div
 
 slope1 = new ig.Slope slope1Container
   ..y -> it.absolventi
-  ..margin {left: 40, right: 50, top: 20, bottom: 20}
+  ..margin {left: 60, right: 0, top: 20, bottom: 20}
   ..scaleExtent (yValues) -> [0, d3.max yValues]
   ..setData obory
   ..draw!
 
 slope2 = new ig.Slope slope2Container
   ..y -> it.nezamestnani
-  ..margin {left: 40, right: 50, top: 20, bottom: 20}
+  ..margin {left: 60, right: 238, top: 20, bottom: 20}
   ..scaleExtent (yValues) -> [0, d3.max yValues]
   ..setData obory
   ..draw!
@@ -30,3 +30,35 @@ allLines = container.selectAll \g.line
 for slope in [slope1, slope2]
   slope.on \mouseover, (datum) ->
     allLines.classed \active -> it.datum is datum
+
+slope1.graphContainer.selectAll \g.label-start .append \text
+  ..attr \text-anchor \end
+  ..attr \x -15
+  ..attr \y 4
+  ..text -> ig.utils.formatNumber it.datum.abs2001
+
+slope1.graphContainer.selectAll \g.label-end .append \text
+  ..attr \x 15
+  ..attr \y 4
+  ..text -> ig.utils.formatNumber it.datum.abs2015
+
+slope2.graphContainer.selectAll \g.label-start .append \text
+  ..attr \text-anchor \end
+  ..attr \x -15
+  ..attr \y 4
+  ..text ->
+    "#{ig.utils.formatNumber it.datum.prac2001 / it.datum.abs2001 * 100, 1} %"
+
+slope2.graphContainer
+  ..selectAll \g.label-end
+    ..append \text
+      ..attr \x 15
+      ..attr \y -4
+      ..text ->
+        "#{ig.utils.formatNumber it.datum.prac2015 / it.datum.abs2015 * 100, 1} % nezaměstnaných"
+    ..append \text
+      ..attr \x 15
+      ..attr \y 14
+      ..text -> it.datum.name
+
+allLines.classed \active -> it.datum is obory[4]

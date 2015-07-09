@@ -57,6 +57,12 @@ class ig.Slope
             ..attr \cx (.x2)
             ..attr \cy (.y2)
             ..attr \r 3
+          ..append \g
+            ..attr \class "label label-start"
+            ..attr \transform -> "translate(#{it.x1}, #{it.y1})"
+          ..append \g
+            ..attr \class "label label-end"
+            ..attr \transform -> "translate(#{it.x2}, #{it.y2})"
 
   _drawInteractive: ->
     splitPoints = []
@@ -94,6 +100,7 @@ class ig.Slope
 
   _calculateInnerDimensions: ->
     @width = @fullWidth - @marginObj.left - @marginObj.right
+    console.log @fullWidth, @width
     @height = @fullHeight - @marginObj.top - @marginObj.bottom
 
   _prepareElements: ->
