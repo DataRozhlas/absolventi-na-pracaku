@@ -1,4 +1,4 @@
-
+return if window.location.hash != '#slope'
 obory = d3.csv.parse ig.data.obory, (row) ->
   row.name = row.typ
   for field in <[abs2001 abs2015 prac2001 prac2015]>
