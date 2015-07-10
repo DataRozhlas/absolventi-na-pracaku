@@ -7,6 +7,10 @@ obory = d3.csv.parse ig.data.obory, (row) ->
   row.nezamestnani = [row.prac2001 / row.abs2001, row.prac2015 / row.abs2015]
   row
 container = d3.select ig.containers.base
+container
+  ..append \h1 .html "Humanitní obory absolvuje 5× více studentů"
+  ..append \h2 .html "Přesto počet nezaměstnaných klesá"
+
 slope1Container = container.append \div
   ..attr \class \slope1
 slope2Container = container.append \div
