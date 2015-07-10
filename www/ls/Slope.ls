@@ -13,11 +13,11 @@ class ig.Slope
 
     @scale = d3.scale.linear!
       ..domain @scaleExtentCb allYValues
-      ..range [@height, @marginObj.bottom]
+      ..range [@fullHeight - @marginObj.bottom, @marginObj.top]
 
     @linePointCoords = for yValues, i in linePointYs
       x1 = @marginObj.left
-      x2 = @width
+      x2 = @marginObj.left + @width
       [y1, y2] = yValues.map @scale
       datum = @data[i]
       {x1, x2, y1, y2, datum}
@@ -100,8 +100,12 @@ class ig.Slope
 
   _calculateInnerDimensions: ->
     @width = @fullWidth - @marginObj.left - @marginObj.right
-    console.log @fullWidth, @width
     @height = @fullHeight - @marginObj.top - @marginObj.bottom
+    console.log @width
+    if @x1Label
+      that.attr \transform "translate(#{@marginObj.left}, #{@marginObj.top + @height})"
+    if @x2Label
+      that.attr \transform "translate(#{@marginObj.left + @width}, #{@marginObj.top + @height})"
 
   _prepareElements: ->
     @element = @parentElement.append \div
@@ -110,6 +114,14 @@ class ig.Slope
     @graphContainer = @element.append \svg
       ..attr \class \graph
       ..attr {width: @fullWidth, height: @fullHeight}
+    xLabelsG = @graphContainer.append \g
+      ..attr \class "labels-x"
+    @x1Label = xLabelsG.append \g
+        ..attr \class "label label-x1"
+        ..attr \transform "translate(0, #{@height})"
+    @x2Label = xLabelsG.append \g
+        ..attr \class "label label-x2"
+        ..attr \transform "translate(#{@width}, #{@height})"
 
     @interactiveContainer = @element.append \svg
       ..attr \class \interactive
