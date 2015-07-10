@@ -140,4 +140,31 @@ body
       &:nth-child(6)
         .title
           top 299px
+  ul.legend
+    position absolute
+    top 5px
+    right 10px
+    list-style-type none
+    padding 0px
+    margin 0px
+    li
+      float left
+      position relative
+      clear both
+      margin-bottom 4px
+      &:before
+        content ""
+        position absolute
+        top 5px
+        left -21px
+        width 9px
+        height 9px
+        background red
+      &:nth-child(1):before
+        background #003366
+      &:nth-child(2):before
+        background #ab0000
+      &:nth-child(3):before
+        background #732a38
+
 

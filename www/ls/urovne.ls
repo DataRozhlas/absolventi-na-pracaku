@@ -38,3 +38,11 @@ barContainer = container.append \ol
           o = ig.utils.formatNumber it.abs
           if i == 0 then o += "<span><br>absolv.</span>"
           o
+container.append \ul
+  ..attr \class \legend
+  ..append \li
+    ..html "Střední a vyšší odborné vzdělání"
+  ..append \li
+    ..html "Univerzitní vzdělání"
+  ..append \li
+    ..html "Všeobecné vzdělání"
