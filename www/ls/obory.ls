@@ -8,8 +8,8 @@ obory = d3.csv.parse ig.data.obory, (row) ->
   row
 container = d3.select ig.containers.base
 container
-  ..append \h1 .html "Humanitní obory absolvuje 5× více studentů"
-  ..append \h2 .html "Přesto počet nezaměstnaných klesá"
+  ..append \h1 .html "Humanitní obory absolvuje 5× více studentů než před 14 lety"
+  ..append \h2 .html "přesto podíl nezaměstnaných klesá"
 
 slope1Container = container.append \div
   ..attr \class \slope1
