@@ -101,7 +101,6 @@ class ig.Slope
   _calculateInnerDimensions: ->
     @width = @fullWidth - @marginObj.left - @marginObj.right
     @height = @fullHeight - @marginObj.top - @marginObj.bottom
-    console.log @width
     if @x1Label
       that.attr \transform "translate(#{@marginObj.left}, #{@marginObj.top + @height})"
     if @x2Label
