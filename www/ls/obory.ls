@@ -40,16 +40,6 @@ slope1.graphContainer.selectAll \g.label-end .append \text
   ..attr \x 15
   ..attr \y 4
   ..text -> ig.utils.formatNumber it.datum.abs2015
-for slope in [slope1, slope2]
-  slope
-    ..x1Label.append \text
-      ..text "2001"
-      ..attr \text-anchor \middle
-      ..attr \y 10
-    ..x2Label.append \text
-      ..text "2015"
-      ..attr \text-anchor \middle
-      ..attr \y 10
 
 slope2.graphContainer.selectAll \g.label-start .append \text
   ..attr \text-anchor \end
@@ -70,6 +60,16 @@ slope2.graphContainer
       ..attr \y 14
       ..text -> it.datum.name
 
+for slope in [slope1, slope2]
+  slope
+    ..x1Label.append \text
+      ..text "2001"
+      ..attr \text-anchor \middle
+      ..attr \y 10
+    ..x2Label.append \text
+      ..text "2015"
+      ..attr \text-anchor \middle
+      ..attr \y 10
 allLines.classed \active -> it.datum is obory[4]
 
 slope1Container.append \h3 .text "Absolventi"
