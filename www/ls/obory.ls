@@ -71,3 +71,6 @@ slope2.graphContainer
       ..text -> it.datum.name
 
 allLines.classed \active -> it.datum is obory[4]
+
+slope1Container.append \h3 .text "Absolventi"
+slope2Container.append \h3 .text "Nezaměstnaní"
