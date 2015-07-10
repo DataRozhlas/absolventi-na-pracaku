@@ -14,7 +14,7 @@ slope2Container = container.append \div
 
 slope1 = new ig.Slope slope1Container
   ..y -> it.absolventi
-  ..margin {left: 60, right: 60, top: 20, bottom: 15}
+  ..margin {left: 60, right: 90, top: 20, bottom: 15}
   ..scaleExtent (yValues) -> [0, d3.max yValues]
   ..setData obory
   ..draw!
@@ -36,10 +36,16 @@ slope1.graphContainer.selectAll \g.label-start .append \text
   ..attr \x -15
   ..attr \y 4
   ..text -> ig.utils.formatNumber it.datum.abs2001
-slope1.graphContainer.selectAll \g.label-end .append \text
-  ..attr \x 15
-  ..attr \y 4
-  ..text -> ig.utils.formatNumber it.datum.abs2015
+slope1.graphContainer.selectAll \g.label-end
+  ..append \text
+    ..attr \x 15
+    ..attr \y -4
+    ..text -> ig.utils.formatNumber it.datum.abs2015
+  ..append \text
+    ..attr \x 15
+    ..attr \y 14
+    ..text "absolventů"
+
 
 slope2.graphContainer.selectAll \g.label-start .append \text
   ..attr \text-anchor \end
