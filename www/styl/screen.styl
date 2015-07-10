@@ -69,13 +69,14 @@ body
       position relative
       .title
         position absolute
-        top 380px
+        top 290px
         display block
         width 100%
         text-align center
+        font-weight bold
       .bar-nezamestnani
         position absolute
-        bottom 30px
+        bottom 120px
         left 16%
         width (100% - 2 * @left)
         background ColorRed
@@ -90,25 +91,53 @@ body
           margin-top 7px
           span
             font-weight 300
+      .boxes-absolventi
+        position absolute
+        top 340px
+        left 15px
+        width (100% - 2 * 16%)
+        div
+          width 6px
+          height 6px
+          margin 1px
+          border 1px solid #003366
+          float left
+        span.value
+          display block
+          float left
+          width 100%
+          text-align center
+          margin-top 8px
+          font-weight 500
+          span
+            font-weight normal
       &:nth-child(1)
-        .bar-nezamestnani
-          background #003366
       &:nth-child(2)
         .bar-nezamestnani
           background #003366
+        .boxes-absolventi div
+          border-color #003366
+          background lighten(#003366, 91%)
       &:nth-child(3)
-        .bar-nezamestnani
-          background #ab0000
       &:nth-child(4)
-        .bar-nezamestnani
-          background #ab0000
       &:nth-child(5)
         .bar-nezamestnani
           background #ab0000
+        .boxes-absolventi div
+          border-color #ab0000
+          background lighten(#ab0000, 91%)
       &:nth-child(6)
-        .bar-nezamestnani
-          background #732a38
       &:nth-child(7)
         .bar-nezamestnani
           background #732a38
+        .boxes-absolventi div
+          border-color #732a38
+          background lighten(#732a38, 91%)
+
+      &:nth-child(3)
+      &:nth-child(4)
+      &:nth-child(5)
+      &:nth-child(6)
+        .title
+          top 299px
 
