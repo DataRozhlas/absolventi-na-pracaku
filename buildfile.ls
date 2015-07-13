@@ -13,6 +13,7 @@ externalStyles =
 externalData =
   "obory": "#__dirname/data/obory.csv"
   "vzdelani": "#__dirname/data/vzdelani.csv"
+  "fakulty": "#__dirname/data/fakulty.csv"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ urovne.js obory.js geoUtils.js base.js ]>
