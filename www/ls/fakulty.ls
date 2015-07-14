@@ -1,4 +1,5 @@
 return if window.location.hash != '#fakulty'
+
 container = d3.select ig.containers.base
   ..attr \class "ig fakulty"
 univerzity = []
