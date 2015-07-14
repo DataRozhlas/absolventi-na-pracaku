@@ -31,7 +31,7 @@ widthScale = -> it / univerzity.0.ratio * 300px
 container.append \ol
   ..attr \class \fakulty
   ..selectAll \li .data univerzity .enter!append \li
-    ..attr \data-i (d, i) -> i
+    ..classed \soukroma (.soukr == "T")
     ..append \span .html (.name)
       ..attr \class \name
     ..append \div
@@ -74,3 +74,9 @@ container.append \ol
               ..html -> "#{ig.utils.formatNumber it.ratio * 100, 1} %"
 
 listItems = container.selectAll "ol.fakulty > li"
+container.append \ul
+  ..attr \class \legend
+  ..append \li
+    ..html "Soukromé VŠ"
+  ..append \li
+    ..html "Veřejné VŠ"
