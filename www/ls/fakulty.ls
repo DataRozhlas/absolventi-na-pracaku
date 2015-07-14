@@ -20,7 +20,7 @@ d3.csv.parse ig.data.fakulty, (row) ->
     univerzita.fakulty.push row
   row
 
-univerzity .= filter (.abs > 50)
+univerzity .= filter (.abs >= 48)
 univerzity.sort (a, b) -> b.ratio - a.ratio
 for univerzita in univerzity
   univerzita.fakulty.sort (a, b) -> b.ratio - a.ratio
