@@ -83,4 +83,4 @@ for slope in [slope1, slope2]
 allLines.classed \active -> it.datum is obory[4]
 
 slope1Container.append \h3 .text "Absolventi"
-slope2Container.append \h3 .text "Nezaměstnaní"
+slope2Container.append \h3 .text "Na úřadu práce"

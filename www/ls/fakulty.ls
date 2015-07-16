@@ -28,7 +28,8 @@ for univerzita in univerzity
 
 lineHeight = 42px
 widthScale = -> it / univerzity.0.ratio * 300px
-
+container.append \h1
+  ..html "Absolventi škol na úřadu práce"
 container.append \ol
   ..attr \class \fakulty
   ..selectAll \li .data univerzity .enter!append \li
